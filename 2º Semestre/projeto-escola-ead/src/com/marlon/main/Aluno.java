@@ -54,8 +54,17 @@ public class Aluno {
         this.senha = senha;
     }
 
-    public void adicionarCurso(Curso curso, int semestre, int materia) {
-        matrizCursos[semestre][materia] = curso;
+    public boolean adicionarCurso(Curso curso, int semestre, int materia) {
+        // verificando se a posição informada está livre
+        if (matrizCursos[semestre][materia] == null) {
+            matrizCursos[semestre][materia] = curso;
+            System.out.printf("Curso '%s' adicionado com sucesso!", curso.getNome());
+            return true;
+        } else {
+            // se não for null, avisar que já tem algo lá
+            System.out.printf("[ERRO] Já existe um curso matriculado no 'Semestre' #%d na 'Posição' #%d", semestre, materia);
+            return false;
+        }
     }
 
     public void exibeDados() {
