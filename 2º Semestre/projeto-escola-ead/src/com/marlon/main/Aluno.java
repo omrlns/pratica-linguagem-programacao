@@ -6,6 +6,7 @@ public class Aluno {
     private String dataNascimento;
     private String email;
     private String senha;
+    private Curso[][] matrizCursos = new Curso[5][5];
 
     public Aluno (int codigo, String nome, String dataNascimento, String email, String senha) {
         this.codigo = codigo;
@@ -53,6 +54,10 @@ public class Aluno {
         this.senha = senha;
     }
 
+    public void adicionarCurso(Curso curso, int semestre, int materia) {
+        matrizCursos[semestre][materia] = curso;
+    }
+
     public void exibeDados() {
         System.out.println("--- INFORMAÇÕES DO(A) ALUNO(A) ---");
         System.out.printf("Nome: %s%n", nome);
@@ -60,5 +65,13 @@ public class Aluno {
         System.out.printf("Data de Nascimento: %s%n", dataNascimento);
         System.out.printf("Email: %s%n", email);
         System.out.printf("Senha: %s%n", senha);
+        System.out.println("Cursos Matriculados: ");
+        for (int linha = 0; linha < matrizCursos.length; linha++) {
+            for (int coluna = 0; coluna < matrizCursos[linha].length; coluna++) {
+                if (matrizCursos[linha][coluna] != null ) {
+                    matrizCursos[linha][coluna].exibeDados();
+                }
+            }
+        }
     }
 }
