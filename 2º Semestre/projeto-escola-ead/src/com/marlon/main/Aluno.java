@@ -62,7 +62,7 @@ public class Aluno {
             return true;
         } else {
             // se não for null, avisar que já tem algo lá
-            System.out.printf("[ERRO] Já existe um curso matriculado no 'Semestre' #%d na 'Posição' #%d%n", semestre, materia);
+            System.out.printf("[ERRO] Já existe um curso matriculado no 'Semestre' #%d na 'Posição' #%d%n", semestre + 1, materia + 1);
             return false;
         }
     }
