@@ -15,10 +15,7 @@ public class Aluno {
         this.senha = senha;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
+    public int getCodigo() { return codigo; }
 
     public String getNome() {
         return nome;
