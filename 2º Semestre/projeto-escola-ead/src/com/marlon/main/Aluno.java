@@ -58,11 +58,11 @@ public class Aluno {
         // verificando se a posição informada está livre
         if (matrizCursos[semestre][materia] == null) {
             matrizCursos[semestre][materia] = curso;
-            System.out.printf("Curso '%s' adicionado com sucesso!", curso.getNome());
+            System.out.printf("Curso '%s' adicionado com sucesso!%n", curso.getNome());
             return true;
         } else {
             // se não for null, avisar que já tem algo lá
-            System.out.printf("[ERRO] Já existe um curso matriculado no 'Semestre' #%d na 'Posição' #%d", semestre, materia);
+            System.out.printf("[ERRO] Já existe um curso matriculado no 'Semestre' #%d na 'Posição' #%d%n", semestre, materia);
             return false;
         }
     }

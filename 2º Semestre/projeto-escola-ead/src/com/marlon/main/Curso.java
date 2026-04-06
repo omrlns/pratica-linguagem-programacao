@@ -24,7 +24,7 @@ public class Curso {
     public void setDuracao(int duracao) { this.duracao = duracao; }
 
     public void exibeDados() {
-        System.out.println("--- INFORMAÇÕES DO CURSO ---");
+        System.out.println("--- INFORMAÇÕES DO CURSO ---%n");
         System.out.printf("Código: : %d%n", codigo);
         System.out.printf("Nome: %s%n", nome);
         System.out.printf("Duração: %d horas.", duracao);

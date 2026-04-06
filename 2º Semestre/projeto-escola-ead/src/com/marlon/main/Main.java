@@ -12,8 +12,10 @@ public class Main {
         System.out.println("Quantos cursos você quer cadastrar? ");
         int quantidadeCursos = sc.nextInt();
 
+        sc.nextLine(); // limpa o "enter" após ler a quantidade de cursos
+
         for (int i = 0; i < quantidadeCursos; i++) {
-            System.out.printf("--- CADASTRO DO CURSO #%d ---", i + 1);
+            System.out.printf("--- CADASTRO DO CURSO #%d ---%n", i + 1);
 
             System.out.println("Nome: ");
             String nomeCurso = sc.nextLine();
