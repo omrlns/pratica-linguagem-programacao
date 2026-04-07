@@ -16,7 +16,7 @@ public class SistemaEscolaEAD {
             System.out.println("#1 - Visualizar lista de alunos");
             System.out.println("#2 - Adicionar aluno");
             System.out.println("#3 - Sair");
-            System.out.println("#4 - [TESTE] - Listar Alunos por Curso");
+//            System.out.println("#4 - [TESTE] - Listar Alunos por Curso");
 
 
             System.out.print("Escolha uma opção: ");
@@ -86,18 +86,18 @@ public class SistemaEscolaEAD {
                         novoAluno.exibeDados();
                     }
                     break;
-                case 4:
-                    System.out.println("\n----- RELATÓRIO DE ALUNOS POR CURSO -----");
-                    System.out.println("Informe o 'NOME' do curso:");
-                    String nomeBusca = sc.nextLine();
-                    System.out.println("Informe o 'CÓDIGO' do curso:");
-                    int codigoBusca = sc.nextInt();
-                    sc.nextLine(); // limpeza de buffer
-
-                    Curso cursoTeste = new Curso(codigoBusca, nomeBusca, 40);
-                    System.out.println();
-                    listaPrincipal.exibirAlunosPorCurso(cursoTeste);
-                    break;
+//                case 4:
+//                    System.out.println("\n----- RELATÓRIO DE ALUNOS POR CURSO -----");
+//                    System.out.println("Informe o 'NOME' do curso:");
+//                    String nomeBusca = sc.nextLine();
+//                    System.out.println("Informe o 'CÓDIGO' do curso:");
+//                    int codigoBusca = sc.nextInt();
+//                    sc.nextLine(); // limpeza de buffer
+//
+//                    Curso cursoTeste = new Curso(codigoBusca, nomeBusca, 40);
+//                    System.out.println();
+//                    listaPrincipal.exibirAlunosPorCurso(cursoTeste);
+//                    break;
                 case 3:
                     System.out.println("Saindo do sistema...");
                     break;
