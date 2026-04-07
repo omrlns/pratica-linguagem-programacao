@@ -67,6 +67,21 @@ public class Aluno {
         }
     }
 
+    public boolean estaMatriculado(int codigoBusca) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                // verificando se a posição não é nula
+                if (this.matrizCursos[i][j] != null) {
+                    // verificando se o código do curso é igual ao código buscado
+                    if (this.matrizCursos[i][j].getCodigo() == codigoBusca) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return  false;
+    }
+
     public void exibeDados() {
         System.out.println("\n--- INFORMAÇÕES DO(A) ALUNO(A) ---");
         System.out.printf("Nome: %s%n", nome);
