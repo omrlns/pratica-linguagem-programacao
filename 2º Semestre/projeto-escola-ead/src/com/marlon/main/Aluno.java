@@ -68,7 +68,7 @@ public class Aluno {
     }
 
     public void exibeDados() {
-        System.out.println("--- INFORMAÇÕES DO(A) ALUNO(A) ---");
+        System.out.println("\n--- INFORMAÇÕES DO(A) ALUNO(A) ---");
         System.out.printf("Nome: %s%n", nome);
         System.out.printf("Código: : %d%n", codigo);
         System.out.printf("Data de Nascimento: %s%n", dataNascimento);

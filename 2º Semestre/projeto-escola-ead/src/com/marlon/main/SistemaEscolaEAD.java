@@ -12,12 +12,12 @@ public class SistemaEscolaEAD {
         int opcaoMenu;
 
         do {
-            System.out.println("----- MENU -----");
+            System.out.println("\n----- MENU -----");
             System.out.println("#1 - Visualizar lista de alunos");
             System.out.println("#2 - Adicionar aluno");
             System.out.println("#3 - Sair");
 
-            System.out.println("Escolha uma opção: ");
+            System.out.print("Escolha uma opção: ");
             opcaoMenu = sc.nextInt();
             sc.nextLine(); // limpeza de buffer
 
@@ -27,7 +27,7 @@ public class SistemaEscolaEAD {
                     break;
                 case 2:
                     // Aluno alunoTeste = new Aluno(1, "Marlon da Silva", "29/05/2003", "marlon@gmail.com", "marlon@123");
-                    System.out.println("----- CADASTRO DE ALUNO(A) -----\n");
+                    System.out.println("\n----- CADASTRO DE ALUNO(A) -----\n");
 
                     System.out.println("Nome Completo: ");
                     String nome = sc.nextLine();
@@ -80,7 +80,7 @@ public class SistemaEscolaEAD {
                                 matriculou = novoAluno.adicionarCurso(novoCurso, semestre, materia);
                             }
                         }
-                        System.out.println("[SUCESSO] O cadastro de aluno e cursos foram finalizado com sucesso!");
+                        System.out.println("\n[SUCESSO] O cadastro de aluno e cursos foram finalizado com sucesso!");
                         novoAluno.exibeDados();
                     }
                     break;
