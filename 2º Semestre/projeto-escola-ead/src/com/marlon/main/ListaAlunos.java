@@ -34,22 +34,4 @@ public class ListaAlunos {
             this.alunos[i].exibeDados();
         }
     }
-
-    public void exibirAlunosPorCurso(Curso cursoBuscado) {
-        System.out.printf("Curso: %s | Duração: %d hora(s)%n", cursoBuscado.getNome(), cursoBuscado.getDuracao());
-        System.out.println("Estudantes Matriculados: ");
-
-        boolean achouAlguem = false; // referência de valor para caso a lista seja vazia
-
-        for (int i = 0; i < this.totalAlunos; i++) {
-            if (this.alunos[i].estaMatriculado(cursoBuscado.getCodigo())) {
-                System.out.printf("# %s | Código: %d", this.alunos[i].getNome(), this.alunos[i].getCodigo());
-                achouAlguem = true;
-            }
-        }
-        if (!achouAlguem) {
-            System.out.println("# Nenhum estudante está matriculado neste curso!");
-        }
-    }
-
 }
