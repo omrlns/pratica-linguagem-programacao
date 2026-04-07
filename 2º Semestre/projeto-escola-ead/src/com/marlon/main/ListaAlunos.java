@@ -34,4 +34,13 @@ public class ListaAlunos {
             this.alunos[i].exibeDados();
         }
     }
+
+    public Aluno buscarAluno(int codigoBusca) {
+        for (int i = 0; i < this.totalAlunos; i++) {
+            if (this.alunos[i].getCodigo() == codigoBusca) {
+                return this.alunos[i];
+            }
+        }
+        return null;
+    }
 }
