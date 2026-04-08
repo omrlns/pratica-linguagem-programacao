@@ -17,7 +17,8 @@ public class SistemaEscolaEAD {
             System.out.println("#2 - Adicionar Aluno/Curso");
             System.out.println("#3 - Lançar Notas");
             System.out.println("#4 - Exibir Boletim");
-            System.out.println("#5 - Sair");
+            System.out.println("#5 - Verificar Financeiro do Aluno");
+            System.out.println("#6 - Sair");
 //            System.out.println("#4 - [TESTE] - Listar Alunos por Curso");
 
 
@@ -118,7 +119,30 @@ public class SistemaEscolaEAD {
                         System.out.printf("[ERRO] Nenhum aluno encontrado com o código: %d%n", codigoBoletim);
                     }
                     break;
+                case 5:
+                    System.out.println("\n----- VERIFICAR FINANCEIRO -----");
+                    System.out.print("Digite o 'CÓDIGO' d@ alun@: ");
+                    int codFinancas = sc.nextInt();
+                    sc.nextLine(); // limpeza de buffer!
 
+                    Aluno alunoFinancas = listaPrincipal.buscarAluno(codFinancas);
+
+                    if (alunoFinancas != null) {
+                        alunoFinancas.exibirMensalidades();
+
+                        if (alunoFinancas.getNumParcelas() > 0) {
+                            System.out.print("\nDeseja pagar qual parcela? (Informe o número, ou digite '0' para voltar): ");
+                            int opcaoParcela = sc.nextInt();
+                            sc.nextLine(); // limpeza de buffer
+
+                            if (opcaoParcela > 0) {
+                                alunoFinancas.pagarMensalidade(opcaoParcela - 1);
+                            }
+                        }
+                    } else {
+                        System.out.printf("[ERRO] Nenhum aluno encontrado com o código: %d%n", codFinancas);
+                    }
+                    break;
 //                case 4:
 //                    System.out.println("\n----- RELATÓRIO DE ALUNOS POR CURSO -----");
 //                    System.out.println("Informe o 'NOME' do curso:");
@@ -131,12 +155,12 @@ public class SistemaEscolaEAD {
 //                    System.out.println();
 //                    listaPrincipal.exibirAlunosPorCurso(cursoTeste);
 //                    break;
-                case 5:
+                case 6:
                     System.out.println("Saindo do Sistema...");
                     break;
                 default:
                     System.out.println("Opção Inválida!");
             }
-        } while (opcaoMenu != 5);
+        } while (opcaoMenu != 6);
     }
 }

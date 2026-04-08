@@ -41,6 +41,8 @@ public class Aluno {
         return senha;
     }
 
+    public int getNumParcelas() { return numParcelas; }
+
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
@@ -60,6 +62,8 @@ public class Aluno {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public void setNumParcelas(int numParcelas) { this.numParcelas = numParcelas; }
 
     public boolean adicionarCurso(Curso curso, int semestre, int materia) {
         // verificando se a posição informada está livre
