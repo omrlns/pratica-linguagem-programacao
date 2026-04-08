@@ -1,5 +1,7 @@
 package com.marlon.main;
 
+import java.util.Scanner;
+
 public class Aluno {
     private int codigo;
     private String nome;
@@ -7,6 +9,8 @@ public class Aluno {
     private String email;
     private String senha;
     private Curso[][] matrizCursos = new Curso[5][5];
+    private double[] notas = new double[3];
+    private boolean[] lancada = new boolean[3];
 
     public Aluno (int codigo, String nome, String dataNascimento, String email, String senha) {
         this.codigo = codigo;
@@ -64,6 +68,45 @@ public class Aluno {
             // se não for null, avisar que já tem algo lá
             System.out.printf("[ERRO] Já existe um curso matriculado no 'Semestre' #%d na 'Posição' #%d%n", semestre + 1, materia + 1);
             return false;
+        }
+    }
+
+    public boolean estaMatriculado(int codigoBusca) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                // verificando se a posição não é nula
+                if (this.matrizCursos[i][j] != null) {
+                    // verificando se o código do curso é igual ao código buscado
+                    if (this.matrizCursos[i][j].getCodigo() == codigoBusca) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return  false;
+    }
+
+    public void lancarNotas() {
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("----- LANÇAMENTO DE NOTAS | BOLETIM D@ %s -----%n", this.getNome());
+        for (int i = 0; i < 3; i++) {
+            System.out.printf("Informe a %dª nota: ", i + 1);
+            this.notas[i] = sc.nextDouble(); // guarda a nota na posição referente a nota
+            this.lancada[i] = true; // registra que a nota de determinada posição foi lançada
+        }
+    }
+
+    public double calcularMedia() {
+        double media = (this.notas[0] + this.notas[1] + this.notas[2]) / 3;
+        return  media;
+    }
+
+    public void exibirNotas() {
+        System.out.printf("BOLETIM D@ %s -----%n", this.getNome());
+        for (int i = 0; i < notas.length; i++) {
+            System.out.printf("%dª nota: %.1f%n", i + 1, this.notas[i]);
+            System.out.printf("Média Final: %.1f", this.calcularMedia());
+            System.out.println();
         }
     }
 
