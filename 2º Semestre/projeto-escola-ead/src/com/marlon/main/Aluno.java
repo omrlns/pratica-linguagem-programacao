@@ -1,5 +1,6 @@
 package com.marlon.main;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Aluno {
@@ -11,6 +12,8 @@ public class Aluno {
     private Curso[][] matrizCursos = new Curso[5][5];
     private double[] notas = new double[3];
     private boolean[] lancada = new boolean[3];
+    private Mensalidade[] mensalidades;
+    private int numParcelas;
 
     public Aluno (int codigo, String nome, String dataNascimento, String email, String senha) {
         this.codigo = codigo;
@@ -108,6 +111,43 @@ public class Aluno {
         }
         System.out.printf("Média Final: %.1f", this.calcularMedia());
         System.out.println();
+    }
+
+    public void adicionarMensalidades(double[] valores) {
+        this.numParcelas = valores.length;
+        this.mensalidades = new Mensalidade[this.numParcelas];
+
+        for (int i = 0; i < this.numParcelas; i++) {
+            this.mensalidades[i] = new Mensalidade(valores[i]);
+        }
+    }
+
+    public void exibirMensalidades() {
+        System.out.printf("\n----- RELATÓRIO FINANCEIRO D@ %s -----", this.getNome());
+
+        // caso o aluno ainda não possua mensalidades
+        if (this.numParcelas == 0 || this.mensalidades == null) {
+            System.out.println("Não há registros de mensalidades para este aluno!");
+            return;
+        }
+        for (int i = 0; i < this.numParcelas; i++ ) {
+            String status = this.mensalidades[i].isPago() ? "PAGO" : "PENDENTE";
+            System.out.printf("Parcela #%d: R$%.2f | Status: %s%n", i + 1, this.mensalidades[i].getValor(), status);
+        }
+    }
+
+    public void pagarMensalidade(int indice) {
+        if (indice >= 0 && indice < this.numParcelas) {
+            if (this.mensalidades[indice].isPago()) {
+                System.out.println("[AVISO] O pagamento desta mensalidade já foi realizado!");
+            } else {
+                this.mensalidades[indice].darBaixa();
+                System.out.printf("[SUCESSO] O pagamento da %dª parcela foi realizado com sucesso!", indice + 1);
+            }
+
+        } else {
+            System.out.println("[ERRO] Parcela inválida ou inexistente!");
+        }
     }
 
     public void exibeDados() {
