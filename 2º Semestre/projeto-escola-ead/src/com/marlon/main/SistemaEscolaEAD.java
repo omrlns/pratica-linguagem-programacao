@@ -13,9 +13,11 @@ public class SistemaEscolaEAD {
 
         do {
             System.out.println("\n----- MENU -----");
-            System.out.println("#1 - Visualizar lista de alunos");
-            System.out.println("#2 - Adicionar aluno");
-            System.out.println("#3 - Sair");
+            System.out.println("#1 - Visualizar Lista de Alunos");
+            System.out.println("#2 - Adicionar Aluno/Curso");
+            System.out.println("#3 - Lançar Notas");
+            System.out.println("#4 - Exibir Boletim");
+            System.out.println("#5 - Sair");
 //            System.out.println("#4 - [TESTE] - Listar Alunos por Curso");
 
 
@@ -86,6 +88,37 @@ public class SistemaEscolaEAD {
                         novoAluno.exibeDados();
                     }
                     break;
+                case 3:
+                    System.out.println("----- LANÇAR NOTAS -----\n");
+                    System.out.print("Informe o 'CÓDIGO' d@ alun@: ");
+                    int codigoNota = sc.nextInt();
+                    sc.nextLine(); // limpeza de buffer
+
+                    Aluno alunoParaNota = listaPrincipal.buscarAluno(codigoNota);
+
+                    if (alunoParaNota != null) {
+                        // se achar, o método para lançar as notas será acionado
+                        alunoParaNota.lancarNotas();
+                        System.out.println("[SUCESSO] Notas registradas no sistema!");
+                    } else {
+                        System.out.printf("[ERRO] Nenhum aluno encontrado com o código: %d%n", codigoNota);
+                    }
+                    break;
+                case 4:
+                    System.out.println("----- EXIBIR BOLETIM -----");
+                    System.out.print("Informe o 'CÓDIGO' d@ alun@: ");
+                    int codigoBoletim = sc.nextInt();
+                    sc.nextLine(); // limpeza de buffer
+
+                    Aluno alunoParaBoletim = listaPrincipal.buscarAluno(codigoBoletim);
+
+                    if (alunoParaBoletim != null) {
+                        alunoParaBoletim.exibirNotas();
+                    } else {
+                        System.out.printf("[ERRO] Nenhum aluno encontrado com o código: %d%n", codigoBoletim);
+                    }
+                    break;
+
 //                case 4:
 //                    System.out.println("\n----- RELATÓRIO DE ALUNOS POR CURSO -----");
 //                    System.out.println("Informe o 'NOME' do curso:");
@@ -98,12 +131,12 @@ public class SistemaEscolaEAD {
 //                    System.out.println();
 //                    listaPrincipal.exibirAlunosPorCurso(cursoTeste);
 //                    break;
-                case 3:
-                    System.out.println("Saindo do sistema...");
+                case 5:
+                    System.out.println("Saindo do Sistema...");
                     break;
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("Opção Inválida!");
             }
-        } while (opcaoMenu != 3);
+        } while (opcaoMenu != 5);
     }
 }
