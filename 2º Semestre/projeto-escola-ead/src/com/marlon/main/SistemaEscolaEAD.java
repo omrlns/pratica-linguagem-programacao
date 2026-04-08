@@ -51,6 +51,10 @@ public class SistemaEscolaEAD {
                     boolean cadastroComSucesso = listaPrincipal.adicionarAlunos(novoAluno);
 
                     if (cadastroComSucesso == true) {
+
+                        double[] mensalidadesTeste = {500.0, 500.0, 500.0, 500.0, 500.0, 500.0};
+                        novoAluno.adicionarMensalidades(mensalidadesTeste);
+
                         System.out.println("Quantos cursos você quer cadastrar? ");
                         int quantidadeCursos = sc.nextInt();
 
