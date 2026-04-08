@@ -105,9 +105,9 @@ public class Aluno {
         System.out.printf("BOLETIM D@ %s -----%n", this.getNome());
         for (int i = 0; i < notas.length; i++) {
             System.out.printf("%dª nota: %.1f%n", i + 1, this.notas[i]);
-            System.out.printf("Média Final: %.1f", this.calcularMedia());
-            System.out.println();
         }
+        System.out.printf("Média Final: %.1f", this.calcularMedia());
+        System.out.println();
     }
 
     public void exibeDados() {
