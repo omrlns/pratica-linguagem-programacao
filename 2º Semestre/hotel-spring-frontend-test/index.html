@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Reservas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container my-4">
+        <h1 class="text-center mb-4">Reservas do Hóspede (ID = 1)</h1>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <form id="reservaForm">
+                    <input type="hidden" id="reservaId" />
+                    
+                    <div class="mb-3">
+                        <label for="dataReserva" class="form-label">Data da Reserva</label>
+                        <input type="date" class="form-control" id="dataReserva" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Salvar Reserva</button>
+                    <button type="button" class="btn btn-secondary" id="btnCancel" style="display:none;">Cancelar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <table class="table table-striped table-hover m-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th width="10%">ID</th>
+                            <th>Data da Reserva</th>
+                            <th width="20%" class="text-center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservasList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
