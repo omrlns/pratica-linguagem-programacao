@@ -16,6 +16,8 @@
     <!-- method: define como os dados serão enviados (os mais comuns são GET e POST) -->
     <!-- para organizar melhor o formulário visualmente, usamos: <fieldset> e <legend> -->
     
+    <h3> Formulário 1</h3>
+
     <form action="/caminho-para-enviar" method="POST">
         <!-- os campos do formulário vão aqui -->
         <!-- tipos de campos mais usados: -->
@@ -41,9 +43,9 @@
             <legend>Turno</legend>
             <p>Qual turno você prefere?</p>
             <input type="radio" name="turno" id="matutino" value="matutino">
-            <label for="manha">Matutino</label>
-            <input type="radio" name="turno" id="vespertino" value="vespertino">
-            <label for="vespertino">Vespertino</label>
+            <label for="matutino">Matutino</label>
+            <input type="radio" name="turno" id="matutino" value="vespertino">
+            <label for="matutino">Vespertino</label>
             <input type="radio" name="turno" id="noturno" value="noturno">
             <label for="noturno">Noturno</label>
             </fieldset>
@@ -54,13 +56,52 @@
             <legend>Curso</legend>
             <p>Quais cursos você tem interesse?</p>
             <input type="checkbox" name="curso" id="html" value="HTML">
-            <label for="HTML">HTML</label>
+            <label for="html">HTML</label>
             <input type="checkbox" name="curso" id="css" value="CSS">
-            <label for="CSS">CSS</label>
+            <label for="css">CSS</label>
             <input type="checkbox" name="curso" id="javascript" value="JavaScript">
-            <label for="JavaScript">JavaScript</label>
+            <label for="javascript">JavaScript</label>
             </fieldset>
      </form> <br>
      <button type="submit">Enviar</button>
+
+     <h3>Formulário 2</h3>
+     <fieldset>
+        <legend>Inscrição ONG</legend>
+        <label for="nome-completo">Nome Completo:</label>
+        <input type="text" name="nome-completo" id="nome-completo">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email"> <br>
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" id="telefone" placeholder="(48) 99999-9999">
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade">
+
+        <p>Qual turno você prefere?</p>
+        <input type="radio" name="turno" id="matutino" value="matutino">
+            <label for="matutino">Matutino</label>
+            <input type="radio" name="turno" id="matutino" value="vespertino">
+            <label for="matutino">Vespertino</label>
+            <input type="radio" name="turno" id="noturno" value="noturno">
+            <label for="noturno">Noturno</label> <br> <br>
+        
+        <label for="area">Área de Interesse:</label>
+        <select name="area" id="area">
+            <option value="" disabled selected>Selecione</option>
+        </select>
+
+        <label for="disponibilidade">Disponibilidade Semanal (Horas):</label>
+        <input type="number" name="disponibilidade" id="disponibilidade">
+
+        <p>Deixe uma Mensagem ou Comentário:</p>
+        <textarea name="mensagem" id="mensagem" placeholder="Conte-nos algo sobre você!..."></textarea>
+
+        <input type="checkbox" name="termos" id="termos">
+        <label for="termos">Aceito os Termos.</label>
+        
+        
+
+     </fieldset>
+
 </body>
 </html>
