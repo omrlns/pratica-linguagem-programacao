@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+
+    <!-- DICAS IMPORTANTES -->
+    <!-- * sempre use <label> com os campos, isso melhora a acessibilidade e a experiência do usuário. -->
+    <!-- * campos como email, number e password ajudam a validar melhor os dados. -->
+    <!-- * use required para tornar os campos obrigatórios. -->
+    <!-- placeholder ajuda o usuário a entender o que deve ser preenchido. -->
+    <!-- action define para onde os dados serão enviados -->
+    <!-- method: define como os dados serão enviados (os mais comuns são GET e POST) -->
+    <!-- para organizar melhor o formulário visualmente, usamos: <fieldset> e <legend> -->
+    
+    <form action="/caminho-para-enviar" method="POST">
+        <!-- os campos do formulário vão aqui -->
+        <!-- tipos de campos mais usados: -->
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <!-- texto -->
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required> <br>
+            <!-- email -->
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required> <br>
+            <!-- número -->
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="number"> <br>
+            <!-- senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" required>
+       </fieldset>     
+    </form>
+    <!-- radio = escolher apenas uma opção -->
+    <form action="/caminho-para-enviar" method="POST">
+        <fieldset>
+            <legend>Turno</legend>
+            <p>Qual turno você prefere?</p>
+            <input type="radio" name="turno" id="matutino" value="matutino">
+            <label for="manha">Matutino</label>
+            <input type="radio" name="turno" id="vespertino" value="vespertino">
+            <label for="vespertino">Vespertino</label>
+            <input type="radio" name="turno" id="noturno" value="noturno">
+            <label for="noturno">Noturno</label>
+            </fieldset>
+    </form>
+    <!-- checkbox = escolher várias opções -->
+     <form action="/caminho-para-enviar" method="POST">
+        <fieldset>
+            <legend>Curso</legend>
+            <p>Quais cursos você tem interesse?</p>
+            <input type="checkbox" name="curso" id="html" value="HTML">
+            <label for="HTML">HTML</label>
+            <input type="checkbox" name="curso" id="css" value="CSS">
+            <label for="CSS">CSS</label>
+            <input type="checkbox" name="curso" id="javascript" value="JavaScript">
+            <label for="JavaScript">JavaScript</label>
+            </fieldset>
+     </form> <br>
+     <button type="submit">Enviar</button>
+</body>
+</html>
