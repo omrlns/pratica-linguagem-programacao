@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios</title>
+</head>
+
+<body>
+    <form>
+        <h2>Desafio #1</h2>
+        <fieldset>
+            <legend>Regex - Código de 5 ou 8 Dígitos:</legend>
+            <label for="codigo">Informe um Código:</label>
+            <input 
+            type="text" id="codigo" name="codigo" 
+            pattern="\d{5,8}" 
+            placeholder="12345 ou 12345678" 
+            required>
+        </fieldset>
+        <h2>Desafio #2</h2>
+        <fieldset>
+            <legend>Regex - Nome com Acentos e Espaços</legend>
+            <label for="nome">Informe um Nome:</label>
+            <input 
+            type="text" id="nome" name="nome" 
+            pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" 
+            placeholder="Marlon da Silva"
+            required>
+        </fieldset>
+        <h2>Desafio #3</h2>
+        <fieldset>
+            <legend>Regex - Data no Formato DD/MM/AAAA</legend>
+            <label for="data">Informe um Data:</label>
+            <input 
+            type="text" id="data" name="data" 
+            pattern="\d{2}/\d{2}/\d{4}"
+            placeholder="09/08/2026" 
+            required>
+        </fieldset>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
