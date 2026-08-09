@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Regex</title>
+</head>
+<body>
+    <h1>Formulário com Regex</h1>
+    <form action="/caminho-para-enviar" method="POST">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            
+            <label for="nome">Nome Completo:</label>
+            <input type="text" name="nome" id="nome" required>
+            <br>
+            <label for="cpf">CPF:</label>
+            <input 
+            type="text" name="cpf" id="cpf" 
+            pattern="\d{3}.\d{3}.\d{3}-\d{2}" 
+            placeholder="Exemplo: 123.456.789-00"
+            required>
+            <br>
+            <label for="telefone">Telefone:</label>
+            <input 
+            type="tel" name="telefone" id="telefone"
+            pattern="^(\(?\d{2}\)?|\d{2})\s?9\s?\d{4}-?\d{4}$"
+            placeholder="Exemplo: (99) 99999-9999"
+            required
+            >
+            <br>
+            <label for="nascimento">Data de Nascimento:</label>
+            <input 
+            type="text" name="nascimento" id="nascimento"
+            pattern="\d{2}/\d{2}/\d{4}"
+            placeholder="29/05/2003"
+            required
+            >
+            <br> <br>
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>
