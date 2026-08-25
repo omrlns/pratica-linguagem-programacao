@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Grid 2x3 com Flexbox */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* (280px * 3) + (20px * 2) = 880px para forçar a quebra em 3 colunas e 2 linhas */
+    max-width: 880px;
+    width: 100%;
+}
+
+/* estilização individual das imagens */
+.gallery-container img {
+    width: 280px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-container img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* botão fixado no canto inferior esquerdo */
+.btn-back {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    z-index: 10;
+}
+
+.btn-back:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
