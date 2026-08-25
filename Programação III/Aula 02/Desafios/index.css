@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 1. cabeçalho */
+.page-header {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 16px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #3b82f6;
+}
+
+.header-subtitle {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+/* 2. Conteúdo Central */
+.home-container {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-hub {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.card-hub h2 {
+    color: #0f172a;
+    font-size: 1.6rem;
+}
+
+.card-hub p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* grid de botões dos desafios */
+.menu-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-challenge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-challenge .badge {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.btn-challenge .label {
+    flex: 1;
+    text-align: left;
+}
+
+.btn-challenge:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.btn-challenge:hover .badge {
+    background-color: #ffffff;
+    color: #2563eb;
+}
+
+/* 3. rodapé */
+.page-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
