@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Desafio - Aula 03</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Mar<span>lon</span></div>
+        <nav class="nav">
+            <a href="#cadastro" class="nav-link">Cadastro</a>
+            <a href="#usuarios" class="nav-link">Lista de Usuários</a>
+            <a href="#console-info" class="nav-link">Tipos de Dados</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- formulário de cadastro -->
+        <section id="cadastro" class="card">
+            <h2>Cadastro de Usuário</h2>
+            <form id="form-usuario">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Ex: Marlon da Silva">
+                </div>
+
+                <div class="form-group">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" required min="0" max="123" placeholder="Ex: 23">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required placeholder="Ex: marlon@mail.com">
+                </div>
+
+                <button type="submit" id="btn-cadastrar" class="btn btn-primary">Cadastrar</button>
+            </form>
+
+            <!-- feedback de validação no DOM -->
+            <div id="mensagem-validacao" class="msg-validacao hidden"></div>
+        </section>
+
+        <!-- controles, filtro e interatividade -->
+        <section class="card">
+            <h2>Gerenciar e Filtrar</h2>
+
+            <div class="search-box">
+                <label for="campo-busca">Buscar:</label>
+                <input type="text" id="campo-busca" placeholder="Digite um nome ou email...">
+            </div>
+
+            <div class="acoes-botoes">
+                <button id="btn-ordenar" class="btn btn-secondary">Ordenar por Nome (A-Z)</button>
+                <button id="btn-remover" class="btn btn-danger">Remover Último</button>
+            </div>
+
+            <!-- bônus: elemento para feedback de mousehover -->
+            <p id="dica-hover" class="dica-hover">passe o mouse sobre os botões para ver dicas de ação.</p>
+        </section>
+
+        <!-- lista de usuários -->
+        <section id="usuarios" class="card">
+            <div class="cabecalho-lista">
+                <h2>Usuários Cadastrados</h2>
+                <span class="badge-total">Total: <strong id="total-usuarios">0</strong></span>
+            </div>
+
+            <div id="lista-usuarios" class="grid-usuarios">
+                <!-- renderizando dinamicamente via javascript -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
