@@ -25,6 +25,7 @@ const totalUsuariosElemento = document.getElementById("total-usuarios");
 const campoBusca = document.getElementById("campo-busca");
 const btnOrdenar = document.getElementById("btn-ordenar");
 const btnRemover = document.getElementById("btn-remover");
+const mensagemAcoes = document.getElementById("mensagem-acoes");
 const dicaHover = document.getElementById("dica-hover");
 
 // FUNÇÃO: VALIDAÇÃO DE IDADE | ARROW FUNCTION
@@ -55,10 +56,10 @@ function renderizarUsuarios(listaParaExibir) {
     // renderização via loop foreach utilizando template string
     listaParaExibir.forEach((usuario) => {
         const cardTemplate = `
-        <article class="card-usuario>
-            <h3>${usuario.nome}<h3>
+        <article class="card-usuario">
+            <h3>${usuario.nome}</h3>
             <p><strong>Idade:</strong> ${usuario.idade} anos</p>
-            <p><strong>Email:</strong> ${usuario.emai}</p>
+            <p><strong>Email:</strong> ${usuario.email}</p>
             <span class="badge-faixa ${usuario.faixaEtaria.classeCss}">
                 ${usuario.faixaEtaria.categoria}
             </span>
@@ -73,6 +74,8 @@ function renderizarUsuarios(listaParaExibir) {
 // SUBMIT -> CADASTRO, VALIDAÇÃO E PUSH NO ARRAY
 formUsuario.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    mensagemAcoes.textContent = "";
 
     const nome = inputNome.value.trim();
     const idade = parseInt(inputIdade.value, 10);
@@ -115,19 +118,22 @@ btnOrdenar.addEventListener("click", () => {
 
 // CLICK -> REMOVER O ÚLTIMO COM POP
 btnRemover.addEventListener("click", () => {
+
+    mensagemAcoes.textContent = "";
+
     if (usuarios.length > 0) {
         const usuarioRemovido = usuarios.pop();
-        mensagemValidacao.textContent = `Usuário "${usuarioRemovido.nome}" removido com sucesso!`;
-        mensagemValidacao.className = "msg-validacao sucesso";
+        mensagemAcoes.textContent = `Usuário "${usuarioRemovido.nome}" removido com sucesso!`;
+        mensagemAcoes.className = "msg-validacao sucesso";
     } else {
-        mensagemValidacao.textContent = "Não há usuários para remover!"
-        mensagemValidacao.className = "msg-validacao";
+        mensagemAcoes.textContent = "Não há usuários para remover!"
+        mensagemAcoes.className = "msg-validacao";
     }
     renderizarUsuarios(usuarios);
 });
 
 // INPUT -> FILTRAR EM TEMPO REAL COM FILTER
-campoBusca.addEventListener("input", () => {
+campoBusca.addEventListener("input", (event) => {
     const termo = event.target.value.toLowerCase();
 
     const usuariosFiltrados = usuarios.filter((usuario) => {
