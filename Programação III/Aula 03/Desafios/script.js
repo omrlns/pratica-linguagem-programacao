@@ -69,37 +69,39 @@ function renderizarUsuarios(listaParaExibir) {
     });
 }
 
+// FUNÇÃO: RESETAR AS MENSAGENS E APLICAR A CLASSE HIDDEN
+function limparMsgCadastro() {
+  mensagemValidacao.textContent = "";
+  mensagemValidacao.className = "msg-validacao hidden";
+}
+
+function limparMsgAcoes() {
+  mensagemAcoes.textContent = "";
+  mensagemAcoes.className = "msg-validacao hidden";
+}
+
 // EVENTOS: SUBMIT, CLICK, INPUT, MOUSEOVER, MOUSEOUT
 
 // SUBMIT -> CADASTRO, VALIDAÇÃO E PUSH NO ARRAY
 formUsuario.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    mensagemAcoes.textContent = "";
-
-    const nome = inputNome.value.trim();
-    const idade = parseInt(inputIdade.value, 10);
-    const email = inputEmail.value.trim();
-
-    // executa a validação de idade
-    const faixaEtaria = classificarIdade(idade);
+    // limpar qualquer mensagem pendente dos botões de ação
+    limparMsgAcoes();
 
     // cria o objeto usuário
     const usuario = {
-        nome: nome,
-        idade: idade,
-        email: email,
-        faixaEtaria: faixaEtaria
+        nome: inputNome.value.trim(),
+        idade: parseInt(inputIdade.value, 10),
+        email: inputEmail.value.trim(),
+        faixaEtaria: classificarIdade(parseInt(inputIdade.value, 10))
     };
 
     // adiciona na array com push
     usuarios.push(usuario);
 
     // exibe a validação no DOM
-    mensagemValidacao.textContent = `
-    Usuário "${usuario.nome}" cadastrado com sucesso!
-    Classificação: ${usuario.faixaEtaria.categoria}.
-    `;
+    mensagemValidacao.textContent = `Usuário "${usuario.nome}" cadastrado com sucesso! Classificação: ${usuario.faixaEtaria.categoria}.`;
     mensagemValidacao.className = "msg-validacao sucesso";
 
     // atualiza a redenrização na página
@@ -112,28 +114,41 @@ formUsuario.addEventListener("submit", (event) => {
 
 // CLICK -> ORDENAR POR NOME USANDO SORT
 btnOrdenar.addEventListener("click", () => {
+    limparMsgCadastro();
+    
+    if (usuarios.length === 0) {
+        mensagemAcoes.textContent = "Não há usuários para ordenar!";
+        mensagemAcoes.className = "msg-validacao aviso";
+        return;
+    }
+
     usuarios.sort((a, b) => a.nome.localeCompare(b.nome));
+    mensagemAcoes.textContent = "Lista ordenada alfabeticamente de A-Z com sucesso!";
+    mensagemAcoes.className = "msg-validacao sucessso";
+    
     renderizarUsuarios(usuarios);
 });
 
 // CLICK -> REMOVER O ÚLTIMO COM POP
 btnRemover.addEventListener("click", () => {
-
-    mensagemAcoes.textContent = "";
+    limparMsgCadastro();
 
     if (usuarios.length > 0) {
         const usuarioRemovido = usuarios.pop();
         mensagemAcoes.textContent = `Usuário "${usuarioRemovido.nome}" removido com sucesso!`;
         mensagemAcoes.className = "msg-validacao sucesso";
     } else {
-        mensagemAcoes.textContent = "Não há usuários para remover!"
-        mensagemAcoes.className = "msg-validacao";
+        mensagemAcoes.textContent = "Não há usuários para remover!";
+        mensagemAcoes.className = "msg-validacao aviso";
     }
     renderizarUsuarios(usuarios);
 });
 
 // INPUT -> FILTRAR EM TEMPO REAL COM FILTER
 campoBusca.addEventListener("input", (event) => {
+    limparMsgCadastro();
+    limparMsgAcoes();
+
     const termo = event.target.value.toLowerCase();
 
     const usuariosFiltrados = usuarios.filter((usuario) => {
@@ -147,18 +162,22 @@ campoBusca.addEventListener("input", (event) => {
 
 // MOUSEOVER E MOUSEOUT -> MENSAGENS INTERATIVAS
 btnOrdenar.addEventListener("mouseover", () => {
+    limparMsgAcoes(); // limpa a mensagem se o mouse passou vindo de outro botão
     dicaHover.textContent = "Ação: Ordenará a lista alfabeticamente de A a Z.";
 });
 
 btnOrdenar.addEventListener("mouseout", () => {
+    limparMsgAcoes(); // limpa a mensagem ao tirar o mouse
    dicaHover.textContent = "Passe o mouse sobre os botões para ver dicas de ação."; 
 });
 
 btnRemover.addEventListener("mouseover", () => {
+    limparMsgAcoes(); // limpa a mensagem se o mouse passou vindo de outro botão
     dicaHover.textContent = "Ação: Remove o último usuário inserido." ;   
 });
 
 btnRemover.addEventListener("mouseout", () => {
+    limparMsgAcoes(); // limpa a mensagem ao tirar o mouse
    dicaHover.textContent = "Passe o mouse sobre os botões para ver dicas de ação."; 
 });
 
