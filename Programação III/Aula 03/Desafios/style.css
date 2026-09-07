@@ -7,16 +7,17 @@
 }
 
 :root {
-    --cor-fundo: #f4f6f8;
+    --cor-fundo: darkgray;
     --cor-card: #ffffff;
-    --cor-texto: #2d3748;
-    --cor-primaria: #2563eb;
-    --cor-primaria-hover: #1d4ed8;
-    --cor-secundaria: #0d9488;
-    --cor-secundaria-hover: #0f766e;
-    --cor-danger: #e11d48;
-    --cor-danger-hover: #be123c;
-    --cor-borda: #e2e8f0;
+    --cor-texto: #0f172a;
+    --cor-texto-secundario: #475569;
+    --cor-borda: #94a3b8;
+    --cor-primaria: #1d4ed8;
+    --cor-primaria-hover: #1e40af;
+    --cor-secundaria: #0f766e;
+    --cor-secundaria-hover: #115e59;
+    --cor-danger: #dc2626;
+    --cor-danger-hover: #b91c1c;
 }
 
 body {
@@ -294,6 +295,7 @@ input:focus {
 
 /* MEDIA QUERY [ TELAS AMPLAS 1024px || + ] */
 @media (min-width: 1024px) {
+
     /* TRÊS colunas para a lista em telas mais amplas */
     .grid-usuarios {
         grid-template-columns: repeat(3, 1fr);
