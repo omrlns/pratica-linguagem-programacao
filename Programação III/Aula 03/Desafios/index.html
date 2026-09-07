@@ -21,6 +21,7 @@
         <!-- formulário de cadastro -->
         <section id="cadastro" class="card">
             <h2>Cadastro de Usuário</h2>
+            
             <form id="form-usuario">
                 <div class="form-group">
                     <label for="nome">Nome Completo:</label>
@@ -57,6 +58,9 @@
                 <button id="btn-ordenar" class="btn btn-secondary">Ordenar por Nome (A-Z)</button>
                 <button id="btn-remover" class="btn btn-danger">Remover Último</button>
             </div>
+
+            <!-- mensagem exclusiva para as ações de ordenar e remover -->
+            <div id="mensagem-acoes" class="msg-validacao hidden"></div>
 
             <!-- bônus: elemento para feedback de mousehover -->
             <p id="dica-hover" class="dica-hover">passe o mouse sobre os botões para ver dicas de ação.</p>
