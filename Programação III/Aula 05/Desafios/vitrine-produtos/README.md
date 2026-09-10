@@ -2,6 +2,8 @@
 
 Projeto desenvolvido como parte das atividades práticas da disciplina **Programação III** (Prática de Linguagem de Programação).
 
+> 🌐 **Deploy na Vercel:** [https://vitrine-produtos-chi.vercel.app/](https://vitrine-produtos-chi.vercel.app/)
+
 Aplicação web moderna desenvolvida com **Next.js 16 (App Router)** para consolidar na prática os fundamentos de desenvolvimento front-end corporativo: consumo de APIs RESTful externas com **Axios**, tipagem estática com **TypeScript**, estilização utilitária moderna com **Tailwind CSS v4**, otimizações nativas de imagens (`next/image`) e tipografia (`next/font`), gerenciamento de estados reativos (`useState`, `useEffect`, `useMemo`), e implementação de suítes de testes unitários automatizados com **Jest** e **Testing Library**.
 
 ---
@@ -161,10 +163,14 @@ Dando continuidade à jornada iniciada no React com Vite (Aula 04), a **Aula 05*
 - **[Jest 30](https://jestjs.io/)** & **[@testing-library/jest-dom](https://testing-library.com/)**
 - **[FakeStore API](https://fakestoreapi.com/)**
 - **[ESLint 9](https://eslint.org/)**
+- **[Vercel](https://vercel.com/)** (Deploy & Hospedagem Serverless)
 
 ---
 
 ## 🚀 Como Executar o Projeto Passo a Passo
+
+> [!TIP]
+> **Acesso Rápido Online:** Caso prefira testar a aplicação em produção sem necessidade de instalação local, acesse o link: [https://vitrine-produtos-chi.vercel.app/](https://vitrine-produtos-chi.vercel.app/)
 
 ### Pré-requisitos
 Ter o **[Node.js](https://nodejs.org/)** (versão 18 ou superior) e o **npm** instalados:

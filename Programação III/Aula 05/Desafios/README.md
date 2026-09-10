@@ -2,6 +2,8 @@
 
 Projeto desenvolvido como parte das atividades práticas da disciplina **Programação III** (Prática de Linguagem de Programação).
 
+> 🌐 **Deploy na Vercel:** [https://vitrine-produtos-chi.vercel.app/](https://vitrine-produtos-chi.vercel.app/)
+
 O objetivo principal desta aula foi consolidar e expandir os conhecimentos em ecossistemas modernos de desenvolvimento front-end corporativo, evoluindo de uma SPA client-side em React (como visto na Aula 04) para um framework de nível de produção: o **Next.js 16 (App Router)**. A atividade abrange a arquitetura moderna com **Server e Client Components**, o consumo assíncrono de APIs REST externas com o cliente HTTP **Axios**, tipagem estática e segura com **TypeScript**, estilização utilitária moderna com **Tailwind CSS v4**, otimização nativa de imagens (`next/image`) e tipografia (`next/font`), gerenciamento refinado de estados reativos (`useState`, `useEffect`, `useMemo`), além da implementação de suítes de testes unitários automatizados com **Jest** e **Testing Library** para validação de regras de negócio.
 
 ---
@@ -235,6 +237,8 @@ A aplicação consiste em um **E-commerce Interativo Completo** conectado à Fak
   - **[Jest 30](https://jestjs.io/):** Framework de testes automatizados em JavaScript/TypeScript.
   - **[Testing Library](https://testing-library.com/):** Utilitários e extensões de asserção para o DOM (`@testing-library/jest-dom`).
   - **[ESLint 9](https://eslint.org/):** Análise estática de código com a configuração oficial `eslint-config-next`.
+- **Deploy & Hospedagem:**
+  - **[Vercel](https://vercel.com/):** Plataforma em nuvem serverless com CI/CD contínuo otimizado para o framework Next.js.
 - **Ambiente de Execução:**
   - **[Node.js](https://nodejs.org/):** Runtime JavaScript utilizado como base para o ecossistema e ferramentas.
   - **[npm](https://www.npmjs.com/):** Gerenciador de dependências e pacotes.
@@ -242,6 +246,8 @@ A aplicação consiste em um **E-commerce Interativo Completo** conectado à Fak
 ---
 
 ## 🚀 Como Executar o Projeto Passo a Passo
+
+> **Acesso Rápido Online:** Caso prefira visualizar e interagir com o projeto em produção sem executar localmente, acesse o deploy oficial na Vercel: [https://vitrine-produtos-chi.vercel.app/](https://vitrine-produtos-chi.vercel.app/)
 
 Para rodar esta aplicação em seu computador, siga o roteiro detalhado a seguir:
 
